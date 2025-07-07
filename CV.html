@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignacio Marmol Fernández - Data Scientist | Desarrollador Python</title>
+    <meta name="description" content="Data Scientist especializado en Python, Machine Learning y desarrollo de software. Experiencia en sistemas Unix/Linux y análisis de datos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #64748b;
+            --accent-color: #06b6d4;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --border-light: #e2e8f0;
+            --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            /* Colores por sección - tonos suaves y profesionales */
+            --extracto-color: #6366f1;
+            --skills-color: #10b981;
+            --experience-color: #f59e0b;
+            --education-color: #8b5cf6;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #f1f5f9 50%, #f3f4f6 75%, #f9fafb 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0;
+            background: var(--bg-primary);
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 48px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="20" cy="60" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.5;
+        }
+        
+        header * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        header h1 {
+            margin: 0 0 12px 0;
+            font-size: 3.2em;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        header .headline {
+            margin: 0 0 24px 0;
+            font-size: 1.3em;
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 32px;
+            font-size: 1.05em;
+        }
+        
+        .contact-info a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.15);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .contact-info a:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .contact-info span {
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .position-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1em;
+            padding: 12px 24px;
+            border-radius: 25px;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-shadow: none;
+            animation: pulse-glow 2s infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            }
+            50% {
+                box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            }
+        }
+        
+        .main-content {
+            padding: 40px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin: 0 0 24px 0;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 60px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .section {
+            margin-bottom: 48px;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .job, .education-item {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .job::before, .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 0 2px 2px 0;
+        }
+        
+        .job:hover, .education-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--accent-color);
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            gap: 16px;
+        }
+        
+        .item-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1.25em;
+            line-height: 1.3;
+            flex: 1;
+            min-width: 0; /* Permite que el título se comprima si es necesario */
+        }
+        
+        .item-meta {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            font-weight: 500;
+            background: white;
+            padding: 6px 12px;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            white-space: nowrap; /* Evita que la fecha se parta en varias líneas */
+            flex-shrink: 0; /* Evita que la fecha se comprima */
+        }
+        
+        .item-company {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 8px;
+        }
+        
+        ul {
+            padding-left: 0;
+            margin-top: 0;
+            list-style: none;
+            color: var(--text-secondary);
+        }
+        
+        ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .sidebar-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 24px;
+        }
+        
+        .skills-list, .cert-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        
+        .skills-list li, .cert-list li {
+            padding: 16px 20px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, #f1f5f9 100%);
+            color: var(--text-primary);
+            font-weight: 500;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skills-list li::before, .cert-list li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+        }
+        
+        .skills-list li:hover, .cert-list li:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-light);
+            border-color: var(--accent-color);
+        }
+        
+        .extracto {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, #f1f5f9 100%);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .extracto::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--extracto-color), #a5b4fc);
+        }
+        
+        .extracto-section h2 {
+            color: var(--extracto-color);
+        }
+        
+        .extracto-section h2::after {
+            background: linear-gradient(90deg, var(--extracto-color), #a5b4fc);
+        }
+        
+        .extracto p {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        
+        /* Estilos para sección de habilidades */
+        .skills-section h2 {
+            color: var(--skills-color);
+        }
+        
+        .skills-section h2::after {
+            background: linear-gradient(90deg, var(--skills-color), #34d399);
+        }
+        
+        .skills-list li::before, .cert-list li::before {
+            background: linear-gradient(180deg, var(--skills-color), #34d399);
+        }
+        
+        .skills-list li:hover, .cert-list li:hover {
+            border-color: var(--skills-color);
+        }
+        
+        .cert-details {
+            margin-top: 8px;
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        
+        /* Estilos para sección de experiencia */
+        .experience-section h2 {
+            color: var(--experience-color);
+        }
+        
+        .experience-section h2::after {
+            background: linear-gradient(90deg, var(--experience-color), #fbbf24);
+        }
+        
+        .experience-section .job::before {
+            background: linear-gradient(180deg, var(--experience-color), #fbbf24);
+        }
+        
+        .experience-section .job:hover {
+            border-color: var(--experience-color);
+        }
+        
+        .experience-section .item-company {
+            color: var(--experience-color);
+        }
+        
+        /* Estilos para sección de educación */
+        .education-section h2 {
+            color: var(--education-color);
+        }
+        
+        .education-section h2::after {
+            background: linear-gradient(90deg, var(--education-color), #a78bfa);
+        }
+        
+        .education-section .education-item::before {
+            background: linear-gradient(180deg, var(--education-color), #a78bfa);
+        }
+        
+        .education-section .education-item:hover {
+            border-color: var(--education-color);
+        }
+        
+        .education-section .item-company {
+            color: var(--education-color);
+        }
+
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                border-radius: 12px;
+            }
+            
+            header {
+                padding: 32px 24px;
+            }
+            
+            header h1 {
+                font-size: 2.5em;
+            }
+            
+            header .headline {
+                font-size: 1.1em;
+            }
+            
+            .main-content {
+                padding: 24px;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .item-meta {
+                text-align: left;
+            }
+            
+            .sidebar-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .job, .education-item {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .contact-info a {
+                padding: 10px 20px;
+            }
+            
+            .position-badge {
+                font-size: 1em;
+                padding: 10px 20px;
+                margin-top: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .main-content {
+                padding: 16px;
+            }
+            
+            .job, .education-item {
+                padding: 16px;
+            }
+        }
+        
+        /* Animaciones suaves */
+        * {
+            transition: all 0.3s ease;
+        }
+        
+        /* Mejoras de accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Soporte para modo oscuro */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #f1f5f9;
+                --text-secondary: #cbd5e1;
+                --bg-primary: #1e293b;
+                --bg-secondary: #334155;
+                --border-light: #475569;
+            }
+            
+            body {
+                background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Ignacio Marmol Fernández</h1>
+            <p class="headline">Data Scientist en AEMET • Python, SQL, Machine Learning</p>
+            <div class="contact-info">
+                <span><a href="mailto:naxetem@gmail.com">naxetem@gmail.com</a></span>
+                <span><a href="http://www.linkedin.com/in/ignacio-marmol-fernández" target="_blank" rel="noopener">LinkedIn</a></span>
+                <span>Alcalá de Henares</span>
+            </div>
+            <div class="position-badge">
+                ✅ Posición: 869 en Oposiciones TAI
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="section extracto-section">
+                <h2>Extracto</h2>
+                <div class="extracto">
+                    <p>
+                        Data Scientist especializado en desarrollo de software y análisis de datos en AEMET. Experiencia  en programación Python y aplicación de técnicas de Machine Learning para el procesamiento de grandes volúmenes de datos. Formación en desarrollo de herramientas de software científico, APIs y sistemas Unix/Linux. Experiencia previa en investigación científica con manejo de instrumentación avanzada y participación en proyectos europeos H2020. Trayectoria profesional complementada con certificaciones especializadas en ciencia de datos, Python y Deep Learning.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section sidebar-grid skills-section">
+                <div>
+                    <h2>Aptitudes Principales</h2>
+                    <ul class="skills-list">
+                        <li>Python (Pandas, scikit-learn, xarray)</li>
+                        <li>Machine Learning & Deep Learning</li>
+                        <li>Análisis y visualización de datos</li>
+                        <li>Sistemas Unix/Linux</li>
+                        <li>SQL y bases de datos</li>
+                        <li>Web scraping y APIs</li>
+                        <li>Git y control de versiones</li>
+                        <li>Desarrollo de software científico</li>
+                    </ul>
+                </div>
+                 <div>
+                    <h2>Certificaciones</h2>
+                    <ul class="cert-list">
+                        <li>
+                            <strong>Programa Especializado - Python for Everybody (Coursera, 2023)</strong>
+                            <div class="cert-details">
+                                • Programming for Everybody (Getting Started with Python)<br>
+                                • Python Data Structures<br>
+                                • Using Python to Access Web Data<br>
+                                • Using Databases with Python<br>
+                                • Capstone: Retrieving, Processing, and Visualizing Data with Python
+                            </div>
+                        </li>
+                        <li>Neural Networks and Deep Learning (Coursera, 2023)</li>
+                        <li>Metodología para la ciencia de los datos (IBM, 2025)</li>
+                        <li>Tools for Data Science V2 (Coursera, 2025)</li>
+                        <li>Data Science Orientation (Coursera, 2025)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section experience-section">
+                <h2>Experiencia Profesional</h2>
+                <div class="job">
+                    <div class="item-header">
+                        <span class="item-title">Científico de datos - <span class="item-company">AEMET</span></span>
+                        <span class="item-meta">marzo de 2024 - enero 2025</span>
+                    </div>
+                    <ul>
+                        <li>Desarrollo de herramientas avanzadas en Python para sistemas Unix/Linux orientadas a la extracción y procesamiento de datos del programa CAMS (Copernicus Atmosphere Monitoring Service).</li>
+                        <li>Análisis, procesamiento y visualización de grandes volúmenes de datos atmosféricos utilizando tecnologías como Pandas, Seaborn, scikit-learn y xarray.</li>
+                        <li>Implementación de algoritmos de Machine Learning para la predicción y análisis de parámetros de calidad del aire y variables meteorológicas.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <div class="item-header">
+                        <span class="item-title">Científico atmosférico - <span class="item-company">AEMET</span></span>
+                        <span class="item-meta">mayo de 2022 - febrero de 2024</span>
+                    </div>
+                    <ul>
+                        <li>Soporte técnico y científico especializado en el proyecto europeo H2020 ATMO-ACCESS, facilitando el acceso a datos e infraestructuras atmosféricas.</li>
+                        <li>Operación y mantenimiento de instrumentación científica avanzada (sistemas de aerosoles, espectrómetros infrarrojos, equipos de óptica atmosférica).</li>
+                        <li>Participación activa en plataformas de observación, procedimientos de calibración y campañas de medición en campo.</li>
+                    </ul>
+                </div>
+                 <div class="job">
+                    <div class="item-header">
+                        <span class="item-title">Observador meteorológico de montaña - <span class="item-company">AEMET</span></span>
+                        <span class="item-meta">mayo de 2021 - noviembre de 2021</span>
+                    </div>
+                     <ul>
+                         <li>Observación sistemática de condiciones nivológicas y climáticas en entornos de alta montaña, con elaboración de informes meteorológicos especializados.</li>
+                         <li>Monitorización de variables meteorológicas críticas y evaluación de riesgos asociados a fenómenos meteorológicos adversos.</li>
+                     </ul>
+                </div>
+                 <div class="job">
+                    <div class="item-header">
+                        <span class="item-title">Observador aeronáutico - <span class="item-company">AEMET</span></span>
+                        <span class="item-meta">mayo de 2020 - noviembre de 2020</span>
+                    </div>
+                     <ul>
+                         <li>Monitorización, registro y comunicación de condiciones meteorológicas críticas para la seguridad y operaciones aeronáuticas.</li>
+                         <li>Elaboración de informes meteorológicos aeronáuticos (METAR/TAF) y comunicación con torres de control y centros de navegación aérea.</li>
+                     </ul>
+                </div>
+                <div class="job">
+                    <div class="item-header">
+                        <span class="item-title">Investigador - <span class="item-company">CSIC</span></span>
+                        <span class="item-meta">enero de 2017 - diciembre de 2018</span>
+                    </div>
+                    <ul>
+                        <li>Investigación avanzada en tecnologías de pilas de combustible de hidrógeno: desarrollo de nuevos componentes, técnicas de estimación de estado y optimización de procesos de generación de H₂.</li>
+                        <li>Experiencia especializada en instrumentación científica, procesos de electro-oxidación, protocolos de seguridad para manejo de gases y programación de cargas electrónicas.</li>
+                        <li>Participación en proyectos de I+D orientados al desarrollo de tecnologías limpias y sistemas de almacenamiento energético.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <div class="item-header">
+                        <span class="item-title">Técnico de laboratorio - <span class="item-company">INRA (Institut National de la Recherche Agronomique)</span></span>
+                        <span class="item-meta">mayo de 2012 - agosto de 2012</span>
+                    </div>
+                     <ul>
+                        <li>Análisis fisicoquímico de muestras ambientales: determinación de fósforo en suelos y análisis de composición mineral en tejidos vegetales mediante técnicas de mineralización y cromatografía.</li>
+                        <li>Aplicación de protocolos analíticos especializados y control de calidad en laboratorio de investigación agrícola.</li>
+                     </ul>
+                </div>
+            </div>
+
+            <div class="section education-section">
+                <h2>Educación</h2>
+                <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">Oposiciones al cuerpo de diplomados en meteorología</span>
+                        <span class="item-meta">mayo de 2020 - mayo de 2024</span>
+                    </div>
+                    <div class="item-company">AEMET</div>
+                    <p>Formación especializada en meteorología operativa que incluye matemáticas avanzadas, estadística, termodinámica, climatología, instrumentación meteorológica y servicios meteorológicos públicos.</p>
+                </div>
+                 <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">Máster oficial en Ingeniería y gestión de las energías renovables</span>
+                        <span class="item-meta">2010 - 2011</span>
+                    </div>
+                    <div class="item-company">Universidad San Pablo-CEU</div>
+                    <p>Especialización en tecnologías de energías renovables, gestión energética y sostenibilidad ambiental.</p>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">Licenciatura en Ciencias Ambientales</span>
+                        <span class="item-meta">2004 - 2010</span>
+                    </div>
+                    <div class="item-company">Universidad de Alcalá</div>
+                    <p>Formación integral en ciencias ambientales, análisis de ecosistemas, contaminación y gestión ambiental.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
